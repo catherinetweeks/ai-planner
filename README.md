@@ -1,1 +1,1 @@
-# ai-planner-assistant
+# ai-planner
