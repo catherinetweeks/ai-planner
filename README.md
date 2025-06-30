@@ -1,6 +1,14 @@
-# Tauri + React + Typescript
+# AI Planner
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+An AI-powered planning application built with Tauri, React, and TypeScript.
+
+This project combines the power of AI with a modern desktop application framework to help users create and manage their plans efficiently.
+
+## Tech Stack
+
+- **Frontend**: React + TypeScript + Vite
+- **Backend**: Tauri (Rust)
+- **UI**: Modern responsive design
 
 ## Recommended IDE Setup
 
