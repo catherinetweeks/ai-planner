@@ -23,6 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
+#API keys
+.env
+.venv/
+__pycache__/
+
 #Rust
 # will have compiled files and executables
 debug
