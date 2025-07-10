@@ -4,7 +4,7 @@ function SubmitButton() {
   return (
     <div>
       <button
-      className="flex justify-center"
+      className="bg-white flex justify-center w-full p-3 rounded-xl cursor-pointer mt-3"
       >
         Submit
       </button>
