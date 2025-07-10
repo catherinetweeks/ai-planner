@@ -6,9 +6,13 @@ import InputLayout from "./components/Input/InputLayout";
 function App() {
   return (
     <div>
-      <div className="flex flex-col">
-        <InputLayout />
-        <CalendarLayout />
+      <div className="flex flex-row">
+        <div className="p-10 basis-2/5">
+          <InputLayout />
+        </div>
+        <div className="p-10 basis-3/5">
+          <CalendarLayout />
+        </div>
       </div>
     </div>
   );
