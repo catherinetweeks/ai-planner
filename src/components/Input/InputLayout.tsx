@@ -1,19 +1,37 @@
-import Title from "./Title.tsx";
-import Textbox from "./Textbox.tsx";
-import SubmitButton from "./SubmitButton.tsx";
+import { useState } from "react";
+import { Textbox } from "./Textbox";
+import { SubmitButton } from "./SubmitButton";
+import Title from "./Title";
 
-function InputLayout() {
+export function InputLayout() {
+  const [input, setInput] = useState("");
+  const [response, setResponse] = useState("");
+
+  const handleSubmit = async () => {
+    try {
+      const res = await fetch("http://localhost:8000/generate-schedule", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: input }),
+      });
+
+      const data = await res.json();
+      setResponse(data.response);
+    } catch (err) {
+      console.error("Error:", err);
+    }
+  };
+
   return (
-    <div>
-      <div 
-      className="flex flex-col bg-zinc-100 rounded-xl p-10"
-      >
-        <Title />
-        <Textbox />
-        <SubmitButton />
-      </div>
+    <div className="bg-zinc-100 rounded-xl flex flex-col gap-4 p-10">
+      <Title />
+      <Textbox value={input} onChange={setInput} />
+      <SubmitButton onClick={handleSubmit} disabled={!input.trim()} />
+      {response && (
+        <div className="mt-4 p-2 border rounded whitespace-pre-wrap">
+          {response}
+        </div>
+      )}
     </div>
   );
 }
-
-export default InputLayout;

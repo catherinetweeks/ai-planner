@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import "./App.css";
 import CalendarLayout from "./components/Calendar/CalendarLayout";
-import InputLayout from "./components/Input/InputLayout";
+import { InputLayout } from "./components/Input/InputLayout";
 
 function App() {
   return (
